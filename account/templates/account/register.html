@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% load static %}
+{% block title %}Create an account{% endblock %}
+{% block content %}
+    <div class="jumbotron">
+        <h1>Sign up for Free</h1>
+        <p>create an account</p>
+    </div>
+
+    <form method="post" class="form">
+        {% bootstrap_form user_form %}
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">
+                Create my account
+            </button>
+        {% endbuttons %}
+    </form>
+
+<script src="{% static 'js/register.js' %}"></script>
+
+{% endblock %}
+
+

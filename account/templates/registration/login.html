@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap3 %}
+{% block title %}Login{% endblock %}
+{% block content %}
+    <div class="kpx_login">
+        <h3 class="kpx_authTitle">Login or <a href="{% url 'register' %}">Sign up</a></h3>
+        <div class="row kpx_row-sm-offset-3">
+            <div class="col-xs-12 col-sm-6">
+                <form class="kpx_loginForm" autocomplete="off" method="POST">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    <input type="hidden" name="next" value="{{ next }}"/>
+                    <hr/>
+                    {% buttons %}
+                        <button type="submit" class="btn btn-lg btn-outline-primary btn-block"><i
+                                class="fa fa-sign-in" id="btn-submit"></i>
+                            Login
+                        </button>
+                    {% endbuttons %}
+                </form>
+            </div>
+        </div>
+    </div>
+
+<script src="{% static 'js/login.js' %}"></script>
+
+{% endblock %}
+
+
