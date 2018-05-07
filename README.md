@@ -1,10 +1,10 @@
-# django_jwt_tutorial
+# django-jwt-tutorial
 
 認識 JWT 以及透過 Django 實戰 📝
 
-* [Youtube Tutorial Part1 - JWT tutorial](XXX)
-* [Youtube Tutorial Part2 - django-rest-framework-jwt tutorial](XXX)
-* [Youtube Tutorial Part3 - dajngo + jwt turoaial](XXX)
+* [Youtube Tutorial Part1 - JWT tutorial](https://youtu.be/p4uWTwkGtZk)
+* [Youtube Tutorial Part2 - django-rest-framework-jwt tutorial](https://youtu.be/CJOysCNAf4s)
+* [Youtube Tutorial Part3 - django + jwt tutorial](https://youtu.be/I_vXGjf8t88)
 
 ## 前言
 
@@ -12,9 +12,9 @@
 
 本篇文章會介紹 [django-rest-framework-jwt](https://github.com/GetBlimp/django-rest-framework-jwt) 這個套件，以及說明 JWT 原理，最後是簡單的實戰。
 
-在開始介紹之前，先讓我們來了解 authentication 以及 authenticated 之間的差異。
+在開始介紹之前，先讓我們來了解 authentication 以及 authorization 之間的差異。
 
-### authentication VS authenticated
+### authentication VS authorization
 
 這兩個有甚麼差別呢 ?
 
@@ -189,6 +189,12 @@ Cross-Origin Resource Sharing ( CORS ) 將不會發生，因為它不使用 cook
 
 如果不了解什麼是 CORS，可參考我之前的文章 [Same-Origin Policy and CORS Tutorial 📝](https://github.com/twtrubiks/CORS-tutorial)。
 
+***我對官方不會發生 CORS 這段話有所保留***
+
+因為我實際下去測試，我發現還是會遇到 CORS 的預檢請求 preflight request，所以還是必須跨域，這部分目前我
+
+還在尋找答案，如果你有任何想法，歡迎和我討論:confused: ( 困擾我好久阿 )
+
 下面來看一張官網的 JWT 瀏覽器以及 server 之間互動的流程圖，
 
 ![alt tag](https://i.imgur.com/F0ucQwQ.png)
@@ -215,7 +221,11 @@ Security Assertion Markup Language Tokens (SAML) 比較。
 
 請參考官方文件 [django-rest-framework-jwt](https://github.com/GetBlimp/django-rest-framework-jwt)，或是直接看我的影片說明:relaxed:
 
-* [Youtube Tutorial Part3 - django-rest-framework-jwt tutorial](XXX)
+* [Youtube Tutorial Part2 - django-rest-framework-jwt tutorial](https://youtu.be/CJOysCNAf4s)
+
+由於這邊會使用到 django-rest-framework 的觀念，所以說你如果不熟悉，可參考我之前的文章
+
+* [Django-REST-framework 基本教學 - 從無到有 DRF-Beginners-Guide](https://github.com/twtrubiks/django-rest-framework-tutorial)
 
 同場加映  [djoser](https://github.com/sunscrapers/djoser)，這個套件整合 django 的 authentication system，提供一系列的
 
