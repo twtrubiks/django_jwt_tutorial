@@ -183,17 +183,15 @@ access 受保護的 resources。
 
 如同前面所說的  self-contained，全部所需要的資訊都在 JWT 中，可以降低需要 query database 的次數。
 
-它允許你可以完全的依賴無狀態的 data APIs ，甚至不需要考慮是正在服務哪個 domains 底下的 API，也就是說
+它允許你可以完全的依賴無狀態的 data APIs ，甚至不需要考慮是正在服務哪個 domains 底下的 API，因
 
-Cross-Origin Resource Sharing ( CORS ) 將不會發生，因為它不使用 cookies。
+為它不使用 cookies。
+
+文件上有提到 Cross-Origin Resource Sharing ( CORS ) ，但經過討論，認為指是強調不使用 cookies，所以
+
+沒有 domains 的問題而已。 ( 所以不要一直執著在 CORS 上面，不然你一定會覺得超怪 :confused: )
 
 如果不了解什麼是 CORS，可參考我之前的文章 [Same-Origin Policy and CORS Tutorial 📝](https://github.com/twtrubiks/CORS-tutorial)。
-
-***我對官方不會發生 CORS 這段話有所保留***
-
-因為我實際下去測試，我發現還是會遇到 CORS 的預檢請求 preflight request，所以還是必須跨域，這部分目前我
-
-還在尋找答案，如果你有任何想法，歡迎和我討論:confused: ( 困擾我好久阿 )
 
 下面來看一張官網的 JWT 瀏覽器以及 server 之間互動的流程圖，
 
