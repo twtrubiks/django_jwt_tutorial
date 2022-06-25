@@ -10,7 +10,7 @@
 
 在設計 API 時，通常會有授權以及驗證，而現在很多設計又都是前後端分離，所以，讓我們來了解一下什麼是 JWT:smiley:
 
-本篇文章會介紹 [django-rest-framework-jwt](https://github.com/GetBlimp/django-rest-framework-jwt) 這個套件，以及說明 JWT 原理，最後是簡單的實戰。
+本篇文章會介紹 [djangorestframework-simplejwt](https://github.com/jazzband/djangorestframework-simplejwt) 這個套件，以及說明 JWT 原理，最後是簡單的實戰。
 
 在開始介紹之前，先讓我們來了解 authentication 以及 authorization 之間的差異。
 
@@ -181,7 +181,7 @@ server 保護的 routes 會去檢查  Authorization header 是否為一個有效
 
 access 受保護的 resources。
 
-如同前面所說的  self-contained，全部所需要的資訊都在 JWT 中，可以降低需要 query database 的次數。
+如同前面所說的 self-contained，全部所需要的資訊都在 JWT 中，可以降低需要 query database 的次數。
 
 它允許你可以完全的依賴無狀態的 data APIs ，甚至不需要考慮是正在服務哪個 domains 底下的 API，因
 
@@ -215,9 +215,9 @@ Security Assertion Markup Language Tokens (SAML) 比較。
 
 呼~  我終於把大部分的重點都翻譯完了 (有些是依照自己的理解加加減減的翻譯 ) :satisfied:
 
-## 把玩 django-rest-framework-jwt
+## 把玩 djangorestframework-simplejwt
 
-請參考官方文件 [django-rest-framework-jwt](https://github.com/GetBlimp/django-rest-framework-jwt)，或是直接看我的影片說明:relaxed:
+請參考官方文件 [djangorestframework-simplejwt](https://github.com/jazzband/djangorestframework-simplejwt)，或是直接看我的影片說明:relaxed:
 
 * [Youtube Tutorial Part2 - django-rest-framework-jwt tutorial](https://youtu.be/CJOysCNAf4s)
 
@@ -257,7 +257,7 @@ password reset and account activation 等等。
 
 ![alt tag](https://i.imgur.com/vbot6Ve.png)
 
-每當進入 [http://127.0.0.1:8000/account/](http://127.0.0.1:8000/account/) 時，我都會先發一個  `api-token-refresh` 去 refresh token，
+每當進入 [http://127.0.0.1:8000/account/](http://127.0.0.1:8000/account/) 時，我都會先發一個  `/api/token/refresh/` 去 refresh token，
 
 並且將這個 token 存在 localStorage 中 ( 覆蓋掉既有存在 localStore 中的 token )，而這個 token 時效
 
@@ -269,11 +269,11 @@ token 將會過期，並且看到下面這個畫面，因為你的 token 已經�
 
 ## 執行環境
 
-* Python 3.6.4
+* Python 3.8
 
 ## Reference
 
-* [django-rest-framework-jwt](https://github.com/GetBlimp/django-rest-framework-jwt)
+* [djangorestframework-simplejwt](https://github.com/jazzband/djangorestframework-simplejwt)
 * [djoser](https://github.com/sunscrapers/djoser)
 
 ## Donation

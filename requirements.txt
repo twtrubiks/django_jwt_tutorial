@@ -1,5 +1,5 @@
-Django==2.0.5
-django-bootstrap3==9.1.0
-djangorestframework==3.7.7
-djangorestframework-jwt==1.11.0
-djoser
+Django==4.0.5
+django-bootstrap3==21.2
+djangorestframework==3.13.1
+djangorestframework-simplejwt==5.2.0
+djoser==2.0.5

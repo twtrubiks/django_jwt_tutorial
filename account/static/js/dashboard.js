@@ -1,18 +1,19 @@
 var jwt_token = localStorage.getItem('jwt_token');
+var jwt_token_refresh = localStorage.getItem('jwt_token_refresh');
 data = {
-    "token": jwt_token
+    "refresh": jwt_token_refresh
 };
 $.ajax({
     type: "POST",
-    url: "http://127.0.0.1:8000/api-token-refresh/",
+    url: "http://127.0.0.1:8000/api/token/refresh/",
     data: data,
     success: function (data) {
-        localStorage.setItem('jwt_token', data.token);
+        localStorage.setItem('jwt_token', data.access);
         $.ajax({
             type: "GET",
-            url: "http://127.0.0.1:8000/api/music/",
+            url: "http://127.0.0.1:8000/api/musics/",
             headers: {
-                "Authorization": "JWT" + " " + localStorage.getItem('jwt_token')
+                "Authorization": "Bearer" + " " + localStorage.getItem('jwt_token')
             },
             success: function (data) {
                 var result = "";
