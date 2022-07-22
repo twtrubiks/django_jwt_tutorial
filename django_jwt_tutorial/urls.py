@@ -15,25 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-)
 
 from rest_framework.routers import DefaultRouter
 from musics.views import MusicViewSet
 
+from custom_jwt.views import MyTokenObtainPairView
+from custom_jwt.views import MyTokenRefreshView
+
 router = DefaultRouter()
-router.register('musics', MusicViewSet)
+router.register("musics", MusicViewSet)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('auth/', include('djoser.urls')),
+    path("admin/", admin.site.urls),
+    path("auth/", include("djoser.urls")),
     # for rest_framework
-    path('api/', include(router.urls)),
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('account/', include('account.urls')),
+    path("api/", include(router.urls)),
+    path("api/token/", MyTokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("api/token/refresh/", MyTokenRefreshView.as_view(), name="token_refresh"),
+    path("account/", include("account.urls")),
 ]
-
-

@@ -5,8 +5,8 @@ $("form").on("submit", function (event) {
         url: "http://127.0.0.1:8000/api/token/",
         data: $(this).serialize(),
         success: function (data) {
-            localStorage.setItem('jwt_token', data.access);
-            localStorage.setItem('jwt_token_refresh', data.refresh);
+            localStorage.setItem('jwt_token', data.access_token);
+            localStorage.setItem('jwt_token_refresh', data.refresh_token);
             window.location.href = "http://127.0.0.1:8000/account/";
         }
     });
