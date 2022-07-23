@@ -267,6 +267,12 @@ token 將會過期，並且看到下面這個畫面，因為你的 token 已經�
 
 ![alt tag](https://i.imgur.com/8WWJpZ9.png)
 
+## 其他
+
+符合 RFC 規範, 可參考 [PR2](https://github.com/twtrubiks/django_jwt_tutorial/pull/2) - 感謝 NatLee
+
+為了維持教學文的簡單性, 暫時不 merge, 有興趣的可以到連結內觀看.
+
 ## 執行環境
 
 * Python 3.8
